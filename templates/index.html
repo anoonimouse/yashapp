@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alzheimer's Disease Prediction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      width: 400px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Alzheimer’s Disease Prediction</h2>
+    <form method="POST" action="/">
+      <input type="number" name="APOE" step="any" placeholder="APOE" required>
+      <input type="number" name="Clusterin" step="any" placeholder="Clusterin" required>
+      <input type="number" name="Tau" step="any" placeholder="Tau" required>
+      <input type="number" name="ABeta42" step="any" placeholder="Aβ42" required>
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+      <div class="result">{{ prediction }}</div>
+    {% endif %}
+  </div>
+</body>
+</html>
