@@ -11,5 +11,13 @@ sqlalchemy==2.0.18
 reportlab
 numpy==1.26.4
 shap
+Flask
+gunicorn
+pandas
+scikit-learn
+shap
+matplotlib
+joblib
+
 
 
