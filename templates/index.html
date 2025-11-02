@@ -1,55 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alzheimer's Disease Prediction</title>
   <style>
+    :root {
+      --primary-color: #007bff;
+      --hover-color: #0056b3;
+      --background: #f5f7fa;
+      --text-color: #333;
+      --border-color: #ccc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f7fa;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: var(--background);
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       margin: 0;
+      padding: 20px;
     }
+
     .container {
       background: #fff;
       padding: 30px 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.15);
-      width: 400px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 420px;
       text-align: center;
+      transition: all 0.3s ease;
     }
+
     h2 {
-      margin-bottom: 20px;
-      color: #333;
+      margin-bottom: 25px;
+      color: var(--text-color);
+      font-size: 1.6rem;
     }
+
     input {
       width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 15px;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      font-size: 1rem;
+      transition: 0.2s;
     }
+
+    input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    }
+
     button {
       width: 100%;
-      padding: 10px;
-      background-color: #007BFF;
+      padding: 12px;
+      background-color: var(--primary-color);
       border: none;
       color: white;
-      font-size: 16px;
-      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
       cursor: pointer;
       margin-top: 10px;
+      transition: background 0.3s;
     }
+
     button:hover {
-      background-color: #0056b3;
+      background-color: var(--hover-color);
     }
+
     .result {
       margin-top: 20px;
-      font-size: 18px;
+      font-size: 1.1rem;
       font-weight: bold;
+      color: #222;
+      word-wrap: break-word;
+    }
+
+    /* 🔹 Responsive design */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+      .container {
+        padding: 20px;
+        max-width: 100%;
+        box-shadow: none;
+        border-radius: 10px;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      input, button {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 350px) {
+      h2 {
+        font-size: 1.2rem;
+      }
+      input, button {
+        padding: 10px;
+      }
     }
   </style>
 </head>
